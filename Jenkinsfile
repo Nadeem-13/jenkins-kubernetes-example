@@ -3,7 +3,7 @@ pipeline{
     stages {
         stage('Build Maven') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Nadeem-13', url: 'https://github.com/Nadeem-13/jenkins-kubernetes-example.git..']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Nadeem-13', url: 'https://github.com/Nadeem-13/jenkins-kubernetes-example.git']]])
 
             }
         }
