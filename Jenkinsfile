@@ -10,7 +10,8 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t 007786/nodejsapp-1.0:latest .'
+                  sh 'docker build -t 007786/nodejsapp .'
+                  sh 'docker tag nodejsapp 007786/nodejsapp:nodejsapp'
                 }
             }
         }
@@ -20,7 +21,7 @@ pipeline{
                  withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
                     sh 'docker login -u 007786 -p $PASSWORD'
                  }  
-                 sh 'docker push 007786/nodejsapp-1.0:latest'
+                 sh 'docker push 007786/nodejsapp:nodejsapp'
                 }
             }
         }
