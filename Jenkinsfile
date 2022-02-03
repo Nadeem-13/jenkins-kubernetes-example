@@ -23,7 +23,7 @@ pipeline{
                  }  
                  sh 'docker push 007786/nodejsapp-1.0:latest'
                 }
-            
+            }
         }
     
     stage('Deploy App on k8s') {
