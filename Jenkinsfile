@@ -18,7 +18,7 @@ pipeline{
         stage('Deploy Docker Image') {
             steps {
                 script {
-                 withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
+                 sh 'echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin'
                     sh 'docker login -u 007786 -p $PASSWORD'
                  }  
                  sh 'docker push 007786/nodejsapp-1.0:latest'
