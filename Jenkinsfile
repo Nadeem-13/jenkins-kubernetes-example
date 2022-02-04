@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
 
-        ProjectName = "nadeem"
+        ProjectName = "nadeem123"
     
         registry = "494724829840.dkr.ecr.ap-northeast-1.amazonaws.com/demo-project"
 	}
