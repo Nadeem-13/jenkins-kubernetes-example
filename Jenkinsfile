@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
 
-        ProjectName = "nadee,"
+        ProjectName = "nadeem"
     
         registry = "494724829840.dkr.ecr.ap-northeast-1.amazonaws.com/demo-project"
 	}
@@ -34,7 +34,7 @@ pipeline{
          script {
                 sh 'aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 494724829840.dkr.ecr.ap-northeast-1.amazonaws.com'
                 
-                sh 'docker push 494724829840.dkr.ecr.ap-northeast-1.amazonaws.com/demo-project:$BUILD_NUMBER'
+                sh 'docker push 494724829840.dkr.ecr.ap-northeast-1.amazonaws.com/demo-project:latest'
          }
         }
       }
