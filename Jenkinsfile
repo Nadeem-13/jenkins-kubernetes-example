@@ -52,7 +52,7 @@ stage("EKS") {
                
                sh ' aws eks --region ap-northeast-1 update-kubeconfig --name new-one-cluster'
                sh 'kubectl apply -f nodejsapp.yaml'
-               sh 'kubectl apply -f service.yaml'
+               
              }
            }
       }
